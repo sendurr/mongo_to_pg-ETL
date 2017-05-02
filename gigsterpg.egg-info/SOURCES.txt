@@ -1,0 +1,5 @@
+setup.cfg
+gigsterpg.egg-info/PKG-INFO
+gigsterpg.egg-info/SOURCES.txt
+gigsterpg.egg-info/dependency_links.txt
+gigsterpg.egg-info/top_level.txt

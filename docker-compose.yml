@@ -1,0 +1,24 @@
+version: '2'
+services:
+  gigster-data-practical:
+    build: .
+    environment:
+      - ENV
+      - DB_URL_MONGO=mongodb://mongo:27017/data-practical
+      - DB_URL_PSQL=postgres://future_gigster:password@pg:5432/data-practical
+      - PORT=5001
+    ports:
+      - "5001:5001"
+    volumes:
+      - ".:/gigsterpg/"
+    links:
+      - pg
+      - mongo
+  pg:
+    build: ./docker/pg
+    ports:
+      - "5432:5432"
+  mongo:
+    build: ./docker/mongo
+    ports:
+      - "27017:27017"
